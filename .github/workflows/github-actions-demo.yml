@@ -14,4 +14,10 @@ jobs:
       - name: Run make
         run: |
           make all
+      - name: Store build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: hello-elf
+          path: hello
+          retention-days: 1
       - run: echo "🍏 This job's status is ${{ job.status }}."
